@@ -7,8 +7,12 @@ bmcgehee/joni:
     - '*'
   
   PreRelease:
+    #- sudo apt-get -y update
+    #- sudo apt-get -y install openjdk-7-jdk
+    - sudo add-apt-repository ppa:webupd8team/java
     - sudo apt-get -y update
-    - sudo apt-get -y install openjdk-7-jdk
+    - sudo apt-get -y install oracle-java7-installer
+    - sudo apt-get -y install oracle-java7-set-default
     - sudo apt-get -y install ant
     - sudo apt-get -y install maven
     - sudo apt-get -y install gradle
