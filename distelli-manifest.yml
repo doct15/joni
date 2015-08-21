@@ -1,3 +1,30 @@
 bmcgehee/joni:
+
   PkgInclude:
     - '*'
+  
+  PreRelease:
+    - sudo apt-get -y update
+    - sudo apt-get -y install openjdk-7-jdk
+    - export JAVA_HOME=/usr/lib/jvm/default-java
+    - sudo apt-get -y install ant
+    - sudo apt-get -y install maven
+    - sudo apt-get -y install gradle
+    - if [[ -f gradlew ]]; then
+    -   ./gradlew assemble 
+    - elif [[ -f build.gradle ]]; then
+    -   gradle assemble
+    - elif [[ -f pom.xml ]]; then
+    -   mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+    - fi
+
+    - if [[ -f gradlew ]]; then
+    -   ./gradlew check 
+    - elif [[ -f build.gradle ]]; then
+    -   gradle check
+    - elif [[ -f pom.xml ]]; then
+    -   mvn test -B
+    - else
+    -   ant test
+    - fi
+
