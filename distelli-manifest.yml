@@ -34,5 +34,3 @@ bmcgehee/joni:
     - else
     -   ant test
     - fi
-
-
