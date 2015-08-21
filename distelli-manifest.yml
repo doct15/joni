@@ -16,6 +16,7 @@ bmcgehee/joni:
     - sudo apt-get -y install ant
     - sudo apt-get -y install maven
     - sudo apt-get -y install gradle
+    
     - if [[ -f gradlew ]]; then
     -   ./gradlew assemble 
     - elif [[ -f build.gradle ]]; then
